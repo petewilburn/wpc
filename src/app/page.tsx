@@ -1,65 +1,131 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import Image from "next/image"
+import { ArrowRight, Zap, ShieldAlert, Settings, Map } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div>
+      {/* Hero Section */}
+      <section className="dark-section min-h-[85vh] flex items-center relative overflow-hidden">
+        {/* Geometric background shapes — right side */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Angular shapes inspired by Liminal — CSS-only parallelograms */}
+          <div className="absolute top-0 right-0 w-[55%] h-full">
+            <div className="absolute inset-0 bg-white/[0.03] skew-x-[-12deg] translate-x-[10%]" />
+            <div className="absolute top-[20%] right-[5%] w-[40%] h-[60%] bg-white/[0.02] skew-x-[-12deg]" />
+            <div className="absolute top-[10%] right-[15%] w-[20%] h-[80%] bg-white/[0.04] skew-x-[-12deg]" />
+          </div>
+          {/* Gradient overlay to fade shapes into text area */}
+          <div className="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/95 to-transparent" />
+        </div>
+        
+        <div className="container mx-auto px-4 md:px-8 relative z-20">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+              Engineering the <br />
+              <span className="text-primary">systems that power</span> <br />
+              modern industry.
+            </h1>
+            <p className="text-xl md:text-2xl text-dark-muted mb-10 max-w-2xl leading-relaxed">
+              Wilburn Pacific engineers dynamic industrial systems from the ground up or built to suit existing infrastructure. We bridge mechanical expertise with software, automation, and forensic engineering to keep the core of your operations running reliably and safely.
+            </p>
+            {/* <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/company/contact">
+                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg bg-primary text-primary-foreground hover:bg-white/10 hover:text-dark-fg border border-transparent hover:border-primary transition-all duration-200">
+                  Discuss Your Project
+                </Button>
+              </Link>
+              <Link href="/capabilities/software-systems">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white bg-transparent">
+                  Explore Capabilities
+                </Button>
+              </Link>
+            </div> */}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Focus Areas Grid */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">Core Competencies</h2>
+            {/* <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our multidisciplinary engineering teams provide end-to-end solutions for complex operational challenges.
+            </p> */}
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <Link href="/capabilities/software-systems" className="group block">
+              <div className="bg-white border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+                <Map className="w-10 h-10 text-primary mb-6" />
+                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Software Systems</h3>
+                <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
+                  Cloud-native platforms, microservices, and robust backend systems designed for high availability and scale.
+                </p>
+                <div className="text-primary font-medium flex items-center mt-auto">
+                  Learn more <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/capabilities/industrial-automation" className="group block">
+              <div className="bg-white border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+                <Zap className="w-10 h-10 text-primary mb-6" />
+                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Industrial Automation</h3>
+                <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
+                  PLC integration, robotics control, and SCADA systems that bridge the gap between physical and digital.
+                </p>
+                <div className="text-primary font-medium flex items-center mt-auto">
+                  Learn more <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/capabilities/mechanical-engineering" className="group block">
+              <div className="bg-white border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+                <Settings className="w-10 h-10 text-primary mb-6" />
+                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Mechanical Engineering</h3>
+                <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
+                  Structural analysis, machine design, and physical infrastructure engineering for heavy industry.
+                </p>
+                <div className="text-primary font-medium flex items-center mt-auto">
+                  Learn more <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/capabilities/forensic-engineering" className="group block">
+              <div className="bg-white border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+                <ShieldAlert className="w-10 h-10 text-primary mb-6" />
+                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Forensic Engineering</h3>
+                <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
+                  Rigorous root-cause analysis, material testing, and expert testimony for operational failures and accidents.
+                </p>
+                <div className="text-primary font-medium flex items-center mt-auto">
+                  Learn more <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA */}
+      {/* <section className="dark-section py-24 text-center">
+        <div className="container mx-auto px-4 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">Ready to solve your toughest challenges?</h2>
+          <p className="text-xl text-dark-muted mb-10 max-w-2xl mx-auto">
+            Our teams are available for comprehensive project delivery or specialized consulting.
           </p>
+          <Link href="/company/contact">
+            <Button size="lg" className="h-14 px-8 text-lg bg-primary text-primary-foreground hover:bg-white/10 hover:text-dark-fg border border-transparent hover:border-primary transition-all duration-200">
+              Contact Our Engineers
+            </Button>
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section> */}
     </div>
   );
 }

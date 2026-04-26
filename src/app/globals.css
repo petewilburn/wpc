@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Base tokens (light mode only) ──────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surface */
+  --color-background: #f7f8fa;       /* page bg */
+  --color-foreground: #1a1f2e;       /* heading/body text */
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1f2e;
+
+  /* Brand */
+  --color-primary: #3eb8a2;          /* teal CTA bg */
+  --color-primary-foreground: #1a1f2e; /* DARK text on teal (not white) */
+  --color-primary-hover-bg: #f7f8fa; /* On hover → page bg color */
+
+  /* Neutral */
+  --color-secondary: #f1f5f9;        /* light gray bg */
+  --color-secondary-foreground: #334155;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #94a3b8;
+  --color-accent: #e2e8f0;
+  --color-accent-foreground: #1a1f2e;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #3eb8a2;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1f2e;
+
+  /* Dark sections (hero, footer, nav) */
+  --color-dark-bg: #0f1720;
+  --color-dark-fg: #f1f5f9;
+  --color-dark-muted: #94a3b8;
+  --color-dark-border: rgba(255, 255, 255, 0.1);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  /* Radius */
+  --radius: 0.5rem;
 }
 
+/* ─── Tailwind v4 @theme bridge ──────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-card: var(--color-card);
+  --color-card-foreground: var(--color-card-foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-primary-hover-bg: var(--color-primary-hover-bg);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-destructive: var(--color-destructive);
+  --color-border: var(--color-border);
+  --color-input: var(--color-input);
+  --color-ring: var(--color-ring);
+  --color-popover: var(--color-popover);
+  --color-popover-foreground: var(--color-popover-foreground);
+  --color-dark-bg: var(--color-dark-bg);
+  --color-dark-fg: var(--color-dark-fg);
+  --color-dark-muted: var(--color-dark-muted);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Custom utilities ───────────────────────────────────────── */
+@utility dark-section {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-fg);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Base UI navigation menu overrides ──────────────────────── */
+/* Suppress Base UI's default hover/highlighted/active backgrounds */
+[data-slot="navigation-menu-trigger"]:hover,
+[data-slot="navigation-menu-trigger"]:focus,
+[data-slot="navigation-menu-trigger"][data-popup-open],
+[data-slot="navigation-menu-trigger"][data-highlighted] {
+  background-color: transparent !important;
+}
+
+[data-slot="navigation-menu-link"]:hover,
+[data-slot="navigation-menu-link"]:focus,
+[data-slot="navigation-menu-link"][data-active],
+[data-slot="navigation-menu-link"][data-highlighted] {
+  background-color: transparent !important;
+}
+
+/* Text color: teal on hover only, revert when not hovered */
+[data-slot="navigation-menu-link"]:hover {
+  color: var(--color-primary) !important;
+}
+
+[data-slot="navigation-menu-link"]:not(:hover) {
+  color: inherit;
 }
