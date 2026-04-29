@@ -110,7 +110,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-border p-6 md:p-8">
+    <div className="bg-card text-card-foreground rounded-xl shadow-sm border border-border p-6 md:p-8">
       {submitStatus === 'error' && (
         <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-lg flex gap-3 text-destructive">
           <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />

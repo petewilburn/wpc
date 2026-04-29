@@ -12,9 +12,9 @@ export default function Home() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           {/* Angular shapes inspired by Liminal — CSS-only parallelograms */}
           <div className="absolute top-0 right-0 w-[55%] h-full">
-            <div className="absolute inset-0 bg-white/[0.03] skew-x-[-12deg] translate-x-[10%]" />
-            <div className="absolute top-[20%] right-[5%] w-[40%] h-[60%] bg-white/[0.02] skew-x-[-12deg]" />
-            <div className="absolute top-[10%] right-[15%] w-[20%] h-[80%] bg-white/[0.04] skew-x-[-12deg]" />
+            <div className="absolute inset-0 bg-shape/[0.03] skew-x-[-12deg] translate-x-[10%]" />
+            <div className="absolute top-[20%] right-[5%] w-[40%] h-[60%] bg-shape/[0.02] skew-x-[-12deg]" />
+            <div className="absolute top-[10%] right-[15%] w-[20%] h-[80%] bg-shape/[0.04] skew-x-[-12deg]" />
           </div>
           {/* Gradient overlay to fade shapes into text area */}
           <div className="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/95 to-transparent" />
@@ -22,7 +22,7 @@ export default function Home() {
         
         <div className="container mx-auto px-4 md:px-8 relative z-20">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-dark-heading mb-6 leading-tight">
               Engineering the <br />
               <span className="text-primary">systems that power</span> <br />
               modern industry.
@@ -32,12 +32,12 @@ export default function Home() {
             </p>
             {/* <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/company/contact">
-                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg bg-primary text-primary-foreground hover:bg-white/10 hover:text-dark-fg border border-transparent hover:border-primary transition-all duration-200">
+                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg bg-primary text-primary-foreground hover:bg-dark-hover-bg hover:text-dark-fg border border-transparent hover:border-primary transition-all duration-200">
                   Discuss Your Project
                 </Button>
               </Link>
               <Link href="/capabilities/software-systems">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-lg border-white/20 text-white hover:bg-white/10 hover:text-white bg-transparent">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-lg border-dark-border text-dark-heading hover:bg-dark-hover-bg hover:text-dark-heading bg-transparent">
                   Explore Capabilities
                 </Button>
               </Link>
@@ -58,9 +58,9 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 gap-8">
             <Link href="/capabilities/software-systems" className="group block">
-              <div className="bg-white border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+              <div className="bg-card text-card-foreground border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
                 <Map className="w-10 h-10 text-primary mb-6" />
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Software Systems</h3>
+                <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">Software Systems</h3>
                 <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
                   Cloud-native platforms, microservices, and robust backend systems designed for high availability and scale.
                 </p>
@@ -71,9 +71,9 @@ export default function Home() {
             </Link>
 
             <Link href="/capabilities/industrial-automation" className="group block">
-              <div className="bg-white border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+              <div className="bg-card text-card-foreground border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
                 <Zap className="w-10 h-10 text-primary mb-6" />
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Industrial Automation</h3>
+                <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">Industrial Automation</h3>
                 <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
                   PLC integration, robotics control, and SCADA systems that bridge the gap between physical and digital.
                 </p>
@@ -84,9 +84,9 @@ export default function Home() {
             </Link>
 
             <Link href="/capabilities/mechanical-engineering" className="group block">
-              <div className="bg-white border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+              <div className="bg-card text-card-foreground border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
                 <Settings className="w-10 h-10 text-primary mb-6" />
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Mechanical Engineering</h3>
+                <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">Mechanical Engineering</h3>
                 <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
                   Structural analysis, machine design, and physical infrastructure engineering for heavy industry.
                 </p>
@@ -97,9 +97,9 @@ export default function Home() {
             </Link>
 
             <Link href="/capabilities/forensic-engineering" className="group block">
-              <div className="bg-white border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+              <div className="bg-card text-card-foreground border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
                 <ShieldAlert className="w-10 h-10 text-primary mb-6" />
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Forensic Engineering</h3>
+                <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">Forensic Engineering</h3>
                 <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
                   Rigorous root-cause analysis, material testing, and expert testimony for operational failures and accidents.
                 </p>
@@ -115,12 +115,12 @@ export default function Home() {
       {/* CTA */}
       {/* <section className="dark-section py-24 text-center">
         <div className="container mx-auto px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">Ready to solve your toughest challenges?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-dark-heading mb-6">Ready to solve your toughest challenges?</h2>
           <p className="text-xl text-dark-muted mb-10 max-w-2xl mx-auto">
             Our teams are available for comprehensive project delivery or specialized consulting.
           </p>
           <Link href="/company/contact">
-            <Button size="lg" className="h-14 px-8 text-lg bg-primary text-primary-foreground hover:bg-white/10 hover:text-dark-fg border border-transparent hover:border-primary transition-all duration-200">
+            <Button size="lg" className="h-14 px-8 text-lg bg-primary text-primary-foreground hover:bg-dark-hover-bg hover:text-dark-fg border border-transparent hover:border-primary transition-all duration-200">
               Contact Our Engineers
             </Button>
           </Link>

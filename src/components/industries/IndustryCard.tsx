@@ -39,22 +39,22 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export function IndustryCard({ industry }: { industry: Industry }) {
   return (
-    <Card id={industry.id} className="bg-white border-border shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+    <Card id={industry.id} className="bg-card text-card-foreground border-border shadow-sm flex flex-col group hover:shadow-md transition-shadow">
       <CardContent className="pt-8 flex flex-col flex-1">
         <div className="mb-6 p-3 bg-primary/10 w-fit rounded-lg group-hover:scale-110 transition-transform duration-300">
           {iconMap[industry.icon] || <Factory className="w-8 h-8 text-primary" />}
         </div>
-        <h3 className="text-xl font-bold text-foreground mb-3">{industry.name}</h3>
+        <h3 className="text-xl font-bold text-card-foreground mb-3">{industry.name}</h3>
         <p className="text-muted-foreground leading-relaxed flex-1 mb-8">
           {industry.description}
         </p>
-        <div className="mt-auto pt-4 border-t border-border">
+        {/* <div className="mt-auto pt-4 border-t border-border">
           <Link href={`/company/contact?interest=${industry.id}`}>
             <Button variant="ghost" className="w-full justify-between text-primary hover:text-primary hover:bg-primary/5 px-0 font-medium">
               Discuss your needs <ChevronRight className="w-4 h-4" />
             </Button>
           </Link>
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   )

@@ -8,7 +8,7 @@ export function CapabilityPageTemplate({ capability }: { capability: Capability 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="dark-section pt-32 pb-24 border-b border-white/10">
+      <section className="dark-section pt-32 pb-24 border-b border-dark-border">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <Badge className="bg-primary/20 text-primary hover:bg-primary/30 border-none mb-6 text-sm px-4 py-1">
             Capability Focus
@@ -39,9 +39,9 @@ export function CapabilityPageTemplate({ capability }: { capability: Capability 
             <SectionHeading title="Core Specializations" />
             <div className="grid md:grid-cols-3 gap-6">
               {capability.specializations.map(spec => (
-                <Card key={spec.title} className="bg-white border-border shadow-sm">
+                <Card key={spec.title} className="bg-card text-card-foreground border-border shadow-sm">
                   <CardContent className="pt-6">
-                    <h3 className="text-lg font-semibold text-foreground mb-3">{spec.title}</h3>
+                    <h3 className="text-lg font-semibold text-card-foreground mb-3">{spec.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{spec.description}</p>
                   </CardContent>
                 </Card>
@@ -58,7 +58,7 @@ export function CapabilityPageTemplate({ capability }: { capability: Capability 
             <SectionHeading title="Our Methodology" subtitle="A rigorous, step-by-step approach to project execution." />
             <div className="space-y-6 mt-12">
               {capability.process.map((step, idx) => (
-                <div key={step.title} className="flex gap-6 items-start p-6 rounded-lg border border-border bg-white shadow-sm">
+                <div key={step.title} className="flex gap-6 items-start p-6 rounded-lg border border-border bg-card text-card-foreground shadow-sm">
                   <div className="flex-shrink-0 w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold text-xl">
                     {idx + 1}
                   </div>
@@ -80,7 +80,7 @@ export function CapabilityPageTemplate({ capability }: { capability: Capability 
             <SectionHeading title="Standards & Certifications" align="center" />
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               {capability.certifications.map(cert => (
-                <Badge key={cert} variant="outline" className="text-sm px-4 py-2 border-border bg-white text-foreground">
+                <Badge key={cert} variant="outline" className="text-sm px-4 py-2 border-border bg-card text-card-foreground">
                   {cert}
                 </Badge>
               ))}

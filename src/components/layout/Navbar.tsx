@@ -26,12 +26,12 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b dark-section border-white/10">
+    <header className="sticky top-0 z-50 w-full border-b dark-section border-dark-border">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
         <Link href="/" className="flex items-center space-x-3 group">
           <div className="h-12 w-auto flex items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo_teal.svg" alt="Wilburn Pacific" className="h-10 w-auto" />
+            <img src="/logo.svg" alt="Wilburn Pacific" className="h-10 w-auto" />
           </div>
           <div className="flex flex-col">
             <span className="font-mono font-bold text-lg leading-none tracking-tighter text-primary">WILBURN</span>
@@ -48,7 +48,7 @@ export function Navbar() {
                   Capabilities
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-dropdown text-dropdown-foreground">
                     {navigation.capabilities.map((capability) => (
                       <ListItem
                         key={capability.title}
@@ -67,13 +67,13 @@ export function Navbar() {
                   Industries
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-dropdown text-dropdown-foreground">
                     <li className="row-span-3">
                       <NavigationMenuLink
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                         href="/industries"
                       >
-                        <div className="mb-2 mt-4 text-lg font-medium text-foreground">
+                        <div className="mb-2 mt-4 text-lg font-medium text-dropdown-foreground">
                           All Industries
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
@@ -98,7 +98,7 @@ export function Navbar() {
                   Resources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-dropdown text-dropdown-foreground">
                     {navigation.resources.map((resource) => (
                       <ListItem
                         key={resource.title}
@@ -116,7 +116,7 @@ export function Navbar() {
                   Company
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-dropdown text-dropdown-foreground">
                     {navigation.company.map((item) => (
                       <ListItem
                         key={item.title}
@@ -165,7 +165,7 @@ const ListItem = React.forwardRef<
         <div className="flex items-center gap-3">
           {icon && <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-200">{icon}</div>}
           <div>
-            <div className="text-sm font-medium leading-none text-foreground group-hover:text-primary transition-colors">{title}</div>
+            <div className="text-sm font-medium leading-none text-dropdown-foreground group-hover:text-primary transition-colors">{title}</div>
             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1.5 group-hover:text-muted-foreground">
               {children}
             </p>

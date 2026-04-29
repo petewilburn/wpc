@@ -10,7 +10,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      <section className="dark-section pt-32 pb-24 border-b border-white/10 relative overflow-hidden">
+      <section className="dark-section pt-32 pb-24 border-b border-dark-border relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-dark-bg to-dark-bg" />
         <div className="container mx-auto px-4 md:px-8 max-w-5xl text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-dark-fg mb-6">

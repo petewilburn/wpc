@@ -31,7 +31,7 @@ export function MobileNav() {
     <>
       <Button
         variant="ghost"
-        className="lg:hidden text-gray-200 hover:text-white hover:bg-white/10"
+        className="lg:hidden text-dark-muted hover:text-dark-hover-fg hover:bg-dark-hover-bg"
         size="icon"
         onClick={() => setIsOpen(true)}
       >
@@ -43,19 +43,19 @@ export function MobileNav() {
         <>
           {/* Backdrop — click to dismiss */}
           <div
-            className="fixed inset-0 z-40 bg-black/40 lg:hidden"
+            className="fixed inset-0 z-40 bg-overlay/40 lg:hidden"
             onClick={() => setIsOpen(false)}
           />
 
           {/* Dropdown panel */}
-          <div className="fixed top-16 right-4 z-50 w-72 max-h-[calc(100vh-5rem)] dark-section lg:hidden flex flex-col rounded-xl shadow-2xl ring-1 ring-white/10 overflow-hidden">
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">
+          <div className="fixed top-16 right-4 z-50 w-72 max-h-[calc(100vh-5rem)] dark-section lg:hidden flex flex-col rounded-xl shadow-2xl ring-1 ring-dark-border overflow-hidden">
+            <div className="flex items-center justify-between px-5 py-3 border-b border-dark-border">
               <span className="font-bold text-sm text-dark-fg uppercase tracking-wider">Navigation</span>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(false)}
-                className="text-dark-muted hover:text-white hover:bg-white/10 h-8 w-8"
+                className="text-dark-muted hover:text-dark-hover-fg hover:bg-dark-hover-bg h-8 w-8"
               >
                 <X className="h-5 w-5" />
                 <span className="sr-only">Close menu</span>

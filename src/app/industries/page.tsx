@@ -12,7 +12,7 @@ export const metadata = {
 export default function IndustriesIndexPage() {
   return (
     <div className="min-h-screen">
-      <section className="dark-section pt-32 pb-24 border-b border-white/10">
+      <section className="dark-section pt-32 pb-24 border-b border-dark-border">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-dark-fg mb-6">
             Industries We Serve
@@ -28,8 +28,8 @@ export default function IndustriesIndexPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {industryGroups.map(group => (
               <Link key={group.slug} href={`/industries/${group.slug}`} className="block group">
-                <div className="bg-white p-8 rounded-xl border border-border shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
-                  <h3 className="text-2xl font-bold text-foreground mb-3">{group.name}</h3>
+                <div className="bg-card text-card-foreground p-8 rounded-xl border border-border shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+                  <h3 className="text-2xl font-bold text-card-foreground mb-3">{group.name}</h3>
                   <p className="text-muted-foreground mb-8 flex-1 leading-relaxed">
                     {group.description}
                   </p>

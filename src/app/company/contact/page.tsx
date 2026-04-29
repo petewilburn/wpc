@@ -9,7 +9,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
-      <section className="dark-section pt-32 pb-24 border-b border-white/10">
+      <section className="dark-section pt-32 pb-24 border-b border-dark-border">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl text-center">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-dark-fg mb-6">
             Get in Touch

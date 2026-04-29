@@ -25,7 +25,7 @@ export function CTASection({
           </p>
           <div className="pt-4">
             <Link href={href}>
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-white/10 hover:text-dark-fg text-lg h-14 px-8 group border border-transparent hover:border-primary transition-all duration-200">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-dark-hover-bg hover:text-dark-fg text-lg h-14 px-8 group border border-transparent hover:border-primary transition-all duration-200">
                 {buttonText} <ChevronRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>

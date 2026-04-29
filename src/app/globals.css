@@ -9,11 +9,11 @@
   /* Surface */
   --color-background: #f7f8fa;       /* page bg */
   --color-foreground: #1a1f2e;       /* heading/body text */
-  --color-card: #ffffff;
-  --color-card-foreground: #1a1f2e;
+  --color-card: #1a1f2e;
+  --color-card-foreground: #ffffff;
 
   /* Brand */
-  --color-primary: #3eb8a2;          /* teal CTA bg */
+  --color-primary: #eed202;          /* teal CTA bg */
   --color-primary-foreground: #1a1f2e; /* DARK text on teal (not white) */
   --color-primary-hover-bg: #f7f8fa; /* On hover → page bg color */
 
@@ -32,12 +32,21 @@
   --color-ring: #3eb8a2;
   --color-popover: #ffffff;
   --color-popover-foreground: #1a1f2e;
+  --color-dropdown: #1a1f2e;
+  --color-dropdown-foreground: #ffffff;
 
   /* Dark sections (hero, footer, nav) */
   --color-dark-bg: #0f1720;
   --color-dark-fg: #f1f5f9;
+  --color-dark-heading: #ffffff;
   --color-dark-muted: #94a3b8;
   --color-dark-border: rgba(255, 255, 255, 0.1);
+  --color-dark-hover-bg: rgba(255, 255, 255, 0.1);
+  --color-dark-hover-fg: #ffffff;
+
+  /* Overlays */
+  --color-overlay: #000000;
+  --color-shape: #ffffff;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -80,9 +89,17 @@
   --color-ring: var(--color-ring);
   --color-popover: var(--color-popover);
   --color-popover-foreground: var(--color-popover-foreground);
+  --color-dropdown: var(--color-dropdown);
+  --color-dropdown-foreground: var(--color-dropdown-foreground);
   --color-dark-bg: var(--color-dark-bg);
   --color-dark-fg: var(--color-dark-fg);
+  --color-dark-heading: var(--color-dark-heading);
   --color-dark-muted: var(--color-dark-muted);
+  --color-dark-border: var(--color-dark-border);
+  --color-dark-hover-bg: var(--color-dark-hover-bg);
+  --color-dark-hover-fg: var(--color-dark-hover-fg);
+  --color-overlay: var(--color-overlay);
+  --color-shape: var(--color-shape);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
 }

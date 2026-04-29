@@ -6,7 +6,7 @@ import { FileText, Download } from "lucide-react"
 export function ResourceCard({ resource }: { resource: Resource }) {
   return (
     <a href={resource.pdfPath} target="_blank" rel="noopener noreferrer" className="block group h-full">
-      <Card className="bg-white border-border shadow-sm group-hover:shadow-md transition-all h-full flex flex-col group-hover:border-primary/30">
+      <Card className="bg-card text-card-foreground border-border shadow-sm group-hover:shadow-md transition-all h-full flex flex-col group-hover:border-primary/30">
         <CardContent className="p-6 flex flex-col flex-1">
           <div className="flex justify-between items-start mb-6">
             <div className="p-3 bg-secondary rounded-lg text-secondary-foreground group-hover:bg-primary/10 group-hover:text-primary transition-colors">
@@ -16,7 +16,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
               PDF
             </Badge>
           </div>
-          <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+          <h3 className="text-xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">
             {resource.title}
           </h3>
           <p className="text-muted-foreground leading-relaxed flex-1 mb-8 text-sm">

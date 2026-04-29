@@ -16,14 +16,14 @@ export function Footer() {
   }
 
   return (
-    <footer className="dark-section border-t border-white/10 pt-16 pb-8">
+    <footer className="dark-section border-t border-dark-border pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Column 1: Logo & Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo_teal.svg" alt="Wilburn Pacific" className="h-10 w-auto" />
+              <img src="/logo.svg" alt="Wilburn Pacific" className="h-10 w-auto" />
               <div className="flex flex-col">
                 <span className="font-mono font-bold text-lg leading-none tracking-tighter text-primary">WILBURN</span>
                 <span className="font-mono text-xs text-dark-muted tracking-widest uppercase">PACIFIC</span>
@@ -35,23 +35,13 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Column 2: Capabilities & Resources */}
+          {/* Column 2: Capabilities */}
           <div>
             <h3 className="font-semibold text-dark-fg mb-4">Capabilities</h3>
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-3">
               {navigation.capabilities.map(item => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-dark-muted hover:text-white transition-colors">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h3 className="font-semibold text-dark-fg mb-4">Resources</h3>
-            <ul className="space-y-3">
-              {navigation.resources.map(item => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-dark-muted hover:text-white transition-colors">
+                  <Link href={item.href} className="text-sm text-dark-muted hover:text-dark-hover-fg transition-colors">
                     {item.title}
                   </Link>
                 </li>
@@ -65,7 +55,7 @@ export function Footer() {
             <ul className="space-y-3">
               {navigation.industries.map(item => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-dark-muted hover:text-white transition-colors">
+                  <Link href={item.href} className="text-sm text-dark-muted hover:text-dark-hover-fg transition-colors">
                     {item.title}
                   </Link>
                 </li>
@@ -73,35 +63,47 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Company & Contact */}
+          {/* Column 4: Resources */}
           <div>
-            <h3 className="font-semibold text-dark-fg mb-4">Company</h3>
-            <ul className="space-y-3 mb-8">
-              {navigation.company.map(item => (
+            <h3 className="font-semibold text-dark-fg mb-4">Resources</h3>
+            <ul className="space-y-3">
+              {navigation.resources.map(item => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-dark-muted hover:text-white transition-colors">
+                  <Link href={item.href} className="text-sm text-dark-muted hover:text-dark-hover-fg transition-colors">
                     {item.title}
                   </Link>
                 </li>
               ))}
             </ul>
-            <h3 className="font-semibold text-dark-fg mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm text-dark-muted">
-              <li>Walla Walla, Washington</li>
-              <Link href="/company/contact">
-                <li className="hover:text-white transition-colors">Contact Us</li>
-              </Link>
+          </div>
+
+          {/* Column 5: Company */}
+          <div>
+            <h3 className="font-semibold text-dark-fg mb-4">Company</h3>
+            <ul className="space-y-3">
+              {navigation.company.map(item => (
+                <li key={item.href}>
+                  <Link href={item.href} className="text-sm text-dark-muted hover:text-dark-hover-fg transition-colors">
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/company/contact" className="text-sm text-dark-muted hover:text-dark-hover-fg transition-colors">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-sm text-dark-muted">
+        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-dark-border text-sm text-dark-muted">
           <p>© {new Date().getFullYear()} Wilburn Pacific. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <button onClick={() => openModal('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
-            <button onClick={() => openModal('terms')} className="hover:text-white transition-colors">Terms of Service</button>
-            <button onClick={() => openModal('disclaimer')} className="hover:text-white transition-colors">Disclaimer</button>
+            <button onClick={() => openModal('privacy')} className="hover:text-dark-hover-fg transition-colors">Privacy Policy</button>
+            <button onClick={() => openModal('terms')} className="hover:text-dark-hover-fg transition-colors">Terms of Service</button>
+            <button onClick={() => openModal('disclaimer')} className="hover:text-dark-hover-fg transition-colors">Disclaimer</button>
           </div>
         </div>
       </div>
