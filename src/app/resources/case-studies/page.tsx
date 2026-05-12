@@ -2,8 +2,9 @@ import { caseStudies } from "@/data/resources"
 import { ResourceCard } from "@/components/resources/ResourceCard"
 
 export const metadata = {
-  title: "Case Studies | Wilburn Pacific",
+  title: "Case Studies",
   description: "Detailed analysis of our past projects and solutions.",
+  alternates: { canonical: "/resources/case-studies" },
 }
 
 export default function CaseStudiesIndex() {

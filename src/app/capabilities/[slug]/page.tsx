@@ -20,8 +20,9 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   }
 
   return {
-    title: `${capability.title} Consulting | Wilburn Pacific`,
+    title: `${capability.title} Consulting`,
     description: capability.description,
+    alternates: { canonical: `/capabilities/${capability.slug}` },
   }
 }
 

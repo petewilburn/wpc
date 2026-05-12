@@ -2,8 +2,9 @@ import { guides } from "@/data/resources"
 import { ResourceCard } from "@/components/resources/ResourceCard"
 
 export const metadata = {
-  title: "Guides & Whitepapers | Wilburn Pacific",
+  title: "Guides & Whitepapers",
   description: "In-depth technical resources and methodologies.",
+  alternates: { canonical: "/resources/guides" },
 }
 
 export default function GuidesIndex() {

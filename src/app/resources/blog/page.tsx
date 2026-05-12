@@ -2,8 +2,9 @@ import { getAllPosts } from "@/lib/blog"
 import { BlogCard } from "@/components/resources/BlogCard"
 
 export const metadata = {
-  title: "Blog | Wilburn Pacific",
+  title: "Blog",
   description: "Insights and perspectives from our engineering teams.",
+  alternates: { canonical: "/resources/blog" },
 }
 
 export default function BlogIndex() {

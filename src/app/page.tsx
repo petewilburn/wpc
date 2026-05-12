@@ -3,6 +3,10 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Zap, ShieldAlert, Settings, Map } from "lucide-react"
 
+export const metadata = {
+  alternates: { canonical: "/" },
+}
+
 export default function Home() {
   return (
     <div>

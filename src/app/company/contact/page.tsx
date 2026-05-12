@@ -2,8 +2,9 @@ import { ContactForm } from "@/components/contact/ContactForm"
 import { MapPin, Mail, Phone } from "lucide-react"
 
 export const metadata = {
-  title: "Contact Us | Wilburn Pacific",
+  title: "Contact Us",
   description: "Get in touch with our engineering team.",
+  alternates: { canonical: "/company/contact" },
 }
 
 export default function ContactPage() {

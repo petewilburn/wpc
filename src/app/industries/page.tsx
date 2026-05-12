@@ -5,8 +5,9 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Industries | Wilburn Pacific",
+  title: "Industries",
   description: "Explore our cross-industry expertise and tailored solutions for specialized sectors.",
+  alternates: { canonical: "/industries" },
 }
 
 export default function IndustriesIndexPage() {

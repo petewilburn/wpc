@@ -21,8 +21,9 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   }
 
   return {
-    title: `${post.title} | Wilburn Pacific`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/resources/blog/${params.slug}` },
   }
 }
 

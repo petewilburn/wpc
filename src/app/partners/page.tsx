@@ -1,8 +1,9 @@
 import { CTASection } from "@/components/shared/CTASection"
 
 export const metadata = {
-  title: "Partners | Wilburn Pacific",
+  title: "Partners",
   description: "Our technology and implementation partners.",
+  alternates: { canonical: "/partners" },
 }
 
 export default function PartnersPage() {

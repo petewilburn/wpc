@@ -3,8 +3,9 @@ import { CTASection } from "@/components/shared/CTASection"
 import Image from "next/image"
 
 export const metadata = {
-  title: "About Us | Wilburn Pacific",
+  title: "About Us",
   description: "Our history, mission, and leadership team.",
+  alternates: { canonical: "/company/about" },
 }
 
 export default function AboutPage() {
