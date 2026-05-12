@@ -1,5 +1,6 @@
 import { getCapabilityBySlug, capabilities } from "@/data/capabilities"
 import { CapabilityPageTemplate } from "@/components/capabilities/CapabilityPageTemplate"
+import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/jsonld"
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
 
@@ -34,5 +35,24 @@ export default async function CapabilityPage(props: { params: Promise<{ slug: st
     notFound()
   }
 
-  return <CapabilityPageTemplate capability={capability} />
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Capabilities", url: "/capabilities" },
+    { name: capability.title, url: `/capabilities/${capability.slug}` },
+  ])
+  const service = serviceJsonLd(capability)
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
+      />
+      <CapabilityPageTemplate capability={capability} />
+    </>
+  )
 }

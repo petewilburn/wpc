@@ -1,5 +1,6 @@
 import { getIndustryGroupBySlug, industryGroups } from "@/data/industries"
 import { IndustryGroupTemplate } from "@/components/industries/IndustryGroupTemplate"
+import { breadcrumbJsonLd } from "@/lib/jsonld"
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
 
@@ -34,5 +35,19 @@ export default async function IndustryGroupPage(props: { params: Promise<{ slug:
     notFound()
   }
 
-  return <IndustryGroupTemplate group={group} />
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Industries", url: "/industries" },
+    { name: group.name, url: `/industries/${group.slug}` },
+  ])
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <IndustryGroupTemplate group={group} />
+    </>
+  )
 }

@@ -1,4 +1,5 @@
 import { getPostBySlug, getAllPosts, markdownToHtml } from "@/lib/blog"
+import { breadcrumbJsonLd, articleJsonLd } from "@/lib/jsonld"
 import { notFound } from "next/navigation"
 import { Metadata } from "next"
 import { Badge } from "@/components/ui/badge"
@@ -44,8 +45,29 @@ export default async function BlogPost(props: { params: Promise<{ slug: string }
 
   const contentHtml = await markdownToHtml(post.content)
 
+  const breadcrumbs = breadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/resources/blog" },
+    { name: post.title ?? params.slug, url: `/resources/blog/${params.slug}` },
+  ])
+  const article = articleJsonLd({
+    title: post.title ?? params.slug,
+    excerpt: post.excerpt,
+    date: post.date ?? new Date().toISOString(),
+    slug: params.slug,
+  })
+
   return (
-    <article className="max-w-3xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
+      />
+      <article className="max-w-3xl mx-auto">
       <Link href="/resources/blog" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary mb-8 transition-colors">
         <ArrowLeft className="mr-2 w-4 h-4" />
         Back to Blog
@@ -69,10 +91,11 @@ export default async function BlogPost(props: { params: Promise<{ slug: string }
         </div>
       </header>
       
-      <div 
+      <div
         className="prose prose-slate prose-lg max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary-hover"
-        dangerouslySetInnerHTML={{ __html: contentHtml }} 
+        dangerouslySetInnerHTML={{ __html: contentHtml }}
       />
     </article>
+    </>
   )
 }

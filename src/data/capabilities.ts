@@ -8,6 +8,7 @@ export interface Capability {
   specializations: { title: string; description: string }[];
   process: { title: string; description: string }[];
   certifications: string[];
+  updatedAt?: string; // ISO date, used by sitemap
 }
 
 export const capabilities: Capability[] = [

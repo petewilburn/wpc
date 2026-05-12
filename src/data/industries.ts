@@ -12,6 +12,7 @@ export interface IndustryGroup {
   description: string;
   industries: Industry[];
   relatedCapabilities: string[]; // slugs
+  updatedAt?: string; // ISO date, used by sitemap
 }
 
 export const industryGroups: IndustryGroup[] = [
