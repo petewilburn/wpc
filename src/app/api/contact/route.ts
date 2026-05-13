@@ -100,6 +100,31 @@ export async function POST(request: Request) {
     const poller = await client.beginSend(emailMessage)
     await poller.pollUntilDone()
 
+    // Auto-reply to the form submitter. Failure here doesn't fail the request —
+    // the primary notification to info@ already went out.
+    try {
+      const autoReply = {
+        senderAddress,
+        content: {
+          subject: "We received your inquiry — Wilburn Pacific",
+          plainText: `Hi ${validatedData.name},\n\nThanks for reaching out about ${validatedData.serviceInterest}. We've received your message and will respond within one business day.\n\nFor reference, here's what you sent:\n\n${validatedData.message}\n\n— Wilburn Pacific Company`,
+          html: `
+            <p>Hi ${validatedData.name},</p>
+            <p>Thanks for reaching out about <strong>${validatedData.serviceInterest}</strong>. We've received your message and will respond within one business day.</p>
+            <p>For reference, here's what you sent:</p>
+            <blockquote style="border-left:3px solid #eed202;padding-left:16px;color:#475569;margin:16px 0;">${validatedData.message.replace(/\n/g, "<br/>")}</blockquote>
+            <p>— Wilburn Pacific Company</p>
+          `,
+        },
+        recipients: { to: [{ address: validatedData.email }] },
+        replyTo: [{ address: "info@wilburnpacific.com" }],
+      }
+      const autoReplyPoller = await client.beginSend(autoReply)
+      await autoReplyPoller.pollUntilDone()
+    } catch (autoReplyErr) {
+      console.warn("Auto-reply failed (primary email succeeded):", autoReplyErr)
+    }
+
     return NextResponse.json({ success: true })
     
   } catch (error) {

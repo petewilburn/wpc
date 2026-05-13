@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/contact/ContactForm"
+import { ScheduleCallout } from "@/components/contact/ScheduleCallout"
 import { MapPin, Mail, Phone } from "lucide-react"
 
 export const metadata = {
@@ -53,6 +54,16 @@ export default function ContactPage() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-background border-t border-border">
+        <div className="container mx-auto px-4 md:px-8 max-w-4xl">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Prefer to schedule a call?</h2>
+          <p className="text-lg text-muted-foreground mb-12">
+            Book a 30-minute consultation directly. We&apos;ll discuss your project and figure out if there&apos;s a fit.
+          </p>
+          <ScheduleCallout />
         </div>
       </section>
     </div>
