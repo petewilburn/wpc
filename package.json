@@ -46,7 +46,7 @@
     "eslint-config-next": "16.2.4",
     "marked": "^18.0.2",
     "tailwindcss": "^4",
-    "typescript": "^5",
+    "typescript": "^6",
     "wait-on": "^9.0.10"
   }
 }
