@@ -1,0 +1,32 @@
+name: E2E Tests
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - run: npm run start &
+        env:
+          # The contact route in src/app/api/contact/route.ts has a graceful
+          # fallback when ACS credentials are missing — it returns success
+          # without sending an email. Perfect for CI: lets us assert the UI
+          # without polluting the real info@ inbox.
+          ACS_CONNECTION_STRING: ""
+          SENDER_ADDRESS: ""
+      - run: npx wait-on http://localhost:3000 --timeout 60000
+      - run: npm run test:e2e
+        env:
+          PLAYWRIGHT_BASE_URL: http://localhost:3000
