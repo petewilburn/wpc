@@ -11,7 +11,7 @@ const BASE_URL = "https://wilburnpacific.com"
 const DEFAULT_LAST_MODIFIED = "2026-04-21"
 
 const STATIC_LAST_MODIFIED: Record<string, string> = {
-  "/": "2026-05-12",
+  "/": "2026-05-18",
   "/capabilities": "2026-05-18",
   "/company/about": "2026-04-21",
   "/company/contact": "2026-05-12",

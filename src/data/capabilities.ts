@@ -87,6 +87,52 @@ export const capabilities: Capability[] = [
       { title: "Reporting", description: "Delivering comprehensive findings and conclusions." }
     ],
     certifications: []
+  },
+  {
+    id: "crane-engineering",
+    slug: "crane-engineering",
+    title: "Crane Engineering",
+    subtitle: "Structural analysis, design review, and forensic investigation of overhead crane systems",
+    description: "Engineering services for overhead crane and hoist systems. We engineer the analysis, design review, and root-cause investigation layer — we don't sell, install, or operate crane equipment. Our work supports owners, operators, and counsel who need independent engineering judgment on lift systems.",
+    icon: "Construction",
+    specializations: [
+      { title: "Structural Analysis", description: "Finite element analysis of girders, end trucks, runways, and supporting steel." },
+      { title: "Design Review", description: "Independent review of new designs against ASME B30, CMAA 70/74, and OSHA 1910.179." },
+      { title: "Forensic Failure Analysis", description: "Root-cause investigation of wire rope, hoist, structural, and electrical failures." },
+      { title: "Retrofit & Modernization", description: "Engineering specifications for capacity changes, control upgrades, and structural reinforcement." },
+      { title: "Compliance Documentation", description: "Periodic inspection support, engineering letters, and code analysis." }
+    ],
+    process: [
+      { title: "Site Survey", description: "On-site assessment of equipment, operating environment, and existing documentation." },
+      { title: "Engineering Analysis", description: "FEA, calculations, and review against applicable codes." },
+      { title: "Report & Specifications", description: "Documented findings, recommendations, and stamped specifications where required." }
+    ],
+    certifications: [
+      "Licensed Professional Engineer (Washington)",
+      "ASME B30 / CMAA 70 / CMAA 74 familiarity",
+      "OSHA 1910.179 expertise"
+    ]
+  },
+  {
+    id: "factory-design",
+    slug: "factory-design",
+    title: "Factory Design",
+    subtitle: "Production facility layout, material handling, and process flow engineering",
+    description: "Engineering services for industrial facility design — from greenfield production lines to brownfield retrofit. We design and optimize the layout, material flow, and capacity of manufacturing and fulfillment operations, with emphasis on throughput and integration with downstream automation.",
+    icon: "Factory",
+    specializations: [
+      { title: "Facility Layout", description: "Greenfield and brownfield production line, workstation, and workflow design." },
+      { title: "Material Handling", description: "Conveyance, sortation, and storage system specification and integration." },
+      { title: "Process Flow Optimization", description: "Throughput analysis, bottleneck identification, and line-balancing." },
+      { title: "Capacity Planning", description: "Sizing for current operations and projected demand growth." },
+      { title: "Automation Integration", description: "Coordination with PLC, SCADA, and robotic systems on the production floor." }
+    ],
+    process: [
+      { title: "Discovery", description: "Operational walkthrough, throughput baseline, and constraint mapping." },
+      { title: "Concept Design", description: "Layout options, material flow diagrams, and trade-off analysis." },
+      { title: "Detail Engineering", description: "Specifications, drawings, and equipment selection for execution." }
+    ],
+    certifications: []
   }
 ];
 

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Zap, ShieldAlert, Settings, Map } from "lucide-react"
+import { ArrowRight, Zap, ShieldAlert, Settings, Map, Construction, Factory } from "lucide-react"
 
 export const metadata = {
   alternates: { canonical: "/" },
@@ -60,7 +60,7 @@ export default function Home() {
             </p> */}
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Link href="/capabilities/software-systems" className="group block">
               <div className="bg-card text-card-foreground border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
                 <Map className="w-10 h-10 text-primary mb-6" />
@@ -106,6 +106,32 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">Forensic Engineering</h3>
                 <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
                   Rigorous root-cause analysis, material testing, and expert testimony for operational failures and accidents.
+                </p>
+                <div className="text-primary font-medium flex items-center mt-auto">
+                  Learn more <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/capabilities/crane-engineering" className="group block">
+              <div className="bg-card text-card-foreground border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+                <Construction className="w-10 h-10 text-primary mb-6" />
+                <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">Crane Engineering</h3>
+                <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
+                  Structural analysis, design review, and forensic investigation of overhead crane and hoist systems.
+                </p>
+                <div className="text-primary font-medium flex items-center mt-auto">
+                  Learn more <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/capabilities/factory-design" className="group block">
+              <div className="bg-card text-card-foreground border border-border rounded-xl p-8 shadow-sm group-hover:shadow-md transition-all group-hover:border-primary/30 h-full flex flex-col">
+                <Factory className="w-10 h-10 text-primary mb-6" />
+                <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">Factory Design</h3>
+                <p className="text-muted-foreground flex-1 mb-6 leading-relaxed">
+                  Production facility layout, material handling, and process flow engineering for manufacturing and fulfillment.
                 </p>
                 <div className="text-primary font-medium flex items-center mt-auto">
                   Learn more <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
