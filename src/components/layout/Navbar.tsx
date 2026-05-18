@@ -15,14 +15,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { MobileNav } from "./MobileNav"
 import { navigation } from "@/data/navigation"
-import { Map, Zap, Settings, ShieldAlert, ChevronRight } from "lucide-react"
-
-const iconMap: Record<string, React.ReactNode> = {
-  "Software Systems": <Map className="w-5 h-5 text-primary" />,
-  "Industrial Automation": <Zap className="w-5 h-5 text-primary" />,
-  "Mechanical Engineering": <Settings className="w-5 h-5 text-primary" />,
-  "Forensic Engineering": <ShieldAlert className="w-5 h-5 text-primary" />
-}
+import { ChevronRight } from "lucide-react"
 
 export function Navbar() {
   return (
@@ -54,7 +47,6 @@ export function Navbar() {
                         key={capability.title}
                         title={capability.title}
                         href={capability.href}
-                        icon={iconMap[capability.title]}
                       >
                         {capability.description}
                       </ListItem>

@@ -92,10 +92,11 @@ export const capabilities: Capability[] = [
     id: "crane-engineering",
     slug: "crane-engineering",
     title: "Crane Engineering",
-    subtitle: "Structural analysis, design review, and forensic investigation of overhead crane systems",
-    description: "Engineering services for overhead crane and hoist systems. We engineer the analysis, design review, and root-cause investigation layer — we don't sell, install, or operate crane equipment. Our work supports owners, operators, and counsel who need independent engineering judgment on lift systems.",
+    subtitle: "Mechanical and Structural Analysis, Engineering Design, Design Review, Forensic Investigation, and Specification Writing for Overhead Crane Systems.",
+    description: "Engineering services for overhead crane and hoist systems. We engineer from the ground up or to fit your existing systems. Our work supports owners, operators, and counsel who need independent engineering judgment on lift systems.",
     icon: "Construction",
     specializations: [
+      { title: "System Design and Drafting", description: "End-to-end crane system design and CAD drafting for new installations and major modifications." },
       { title: "Structural Analysis", description: "Finite element analysis of girders, end trucks, runways, and supporting steel." },
       { title: "Design Review", description: "Independent review of new designs against ASME B30, CMAA 70/74, and OSHA 1910.179." },
       { title: "Forensic Failure Analysis", description: "Root-cause investigation of wire rope, hoist, structural, and electrical failures." },
