@@ -110,7 +110,7 @@ export const capabilities: Capability[] = [
     ],
     certifications: [
       "Licensed Professional Engineer (Washington)",
-      "ASME B30 / CMAA 70 / CMAA 74 familiarity",
+      "ASME B30 / CMAA 70 / CMAA 74 expertise",
       "OSHA 1910.179 expertise"
     ]
   },
