@@ -12,6 +12,7 @@ const DEFAULT_LAST_MODIFIED = "2026-04-21"
 
 const STATIC_LAST_MODIFIED: Record<string, string> = {
   "/": "2026-05-12",
+  "/capabilities": "2026-05-18",
   "/company/about": "2026-04-21",
   "/company/contact": "2026-05-12",
   "/industries": "2026-04-21",
@@ -29,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE_URL, lastModified: lastModForStatic("/"), changeFrequency: "monthly", priority: 1.0 },
     { url: `${BASE_URL}/company/about`, lastModified: lastModForStatic("/company/about"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/company/contact`, lastModified: lastModForStatic("/company/contact"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE_URL}/capabilities`, lastModified: lastModForStatic("/capabilities"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/industries`, lastModified: lastModForStatic("/industries"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/resources/guides`, lastModified: lastModForStatic("/resources/guides"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/resources/blog`, lastModified: lastModForStatic("/resources/blog"), changeFrequency: "weekly", priority: 0.6 },
